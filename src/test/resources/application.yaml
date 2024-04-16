@@ -1,0 +1,19 @@
+spring:
+  pid:
+    fail-on-write-error: true
+    file: logs/pidfile
+  config:
+    name: sample-application
+    import: logging.yaml
+  application:
+    name: H2 Spring Application
+  datasource:
+    username: rixterd2
+    password: rixterd2
+    url: jdbc:h2:file:./hibernate_sql;DB_CLOSE_ON_EXIT=false
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true

@@ -1,0 +1,10 @@
+logging:
+  charset:
+    file: UTF-8
+    console: UTF-8
+  level:
+    root: info
+    sql: info
+  file:
+    name: logs/sample-application.log
+    path: logs
