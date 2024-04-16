@@ -1,12 +1,12 @@
 package com.gmail.rixterd2.example;
 
-import java.time.OffsetDateTime;
+import java.util.UUID;
 
 public class SimpleEntityFactory {
 
     public static SimpleEntity createSimpleEntity() {
         SimpleEntity simpleEntity = new SimpleEntity();
-        simpleEntity.setCreatedAt(OffsetDateTime.now());
+        simpleEntity.setData(UUID.randomUUID().toString());
         return simpleEntity;
     }
 }

@@ -21,11 +21,6 @@ public class HibernateTest {
     private SessionFactory sessionFactory;
 
     @Test
-    void sessionFactoryIsAvailable() {
-        Assertions.assertNotNull(sessionFactory);
-    }
-
-    @Test
     void createSimpleEntityAndFindIt() {
         EntityManager entityManager = sessionFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();

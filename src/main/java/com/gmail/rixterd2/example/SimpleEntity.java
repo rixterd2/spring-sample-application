@@ -1,15 +1,13 @@
 package com.gmail.rixterd2.example;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
 
 @Entity
@@ -21,9 +19,9 @@ public class SimpleEntity {
     private Long id;
 
 
-    @Column(name = "created_at", updatable = false, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private OffsetDateTime createdAt;
+    @Column(name = "data", updatable = false, nullable = false)
+    @Convert(converter = DataConverter.class)
+    private String data;
 
     public Long getId() {
         return id;
@@ -33,12 +31,12 @@ public class SimpleEntity {
         this.id = id;
     }
 
-    public OffsetDateTime getCreatedAt() {
-        return createdAt;
+    public String getData() {
+        return data;
     }
 
-    public void setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setData(String data) {
+        this.data = data;
     }
 
     @Override
